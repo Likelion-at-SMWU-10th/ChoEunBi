@@ -22,11 +22,13 @@ h1 {
 }
 
 h2 {
-  background-color: bisque;
+  background-color: #677ff0;
   font-size: 20px;
-  color: #282828;
+  font-weight: 600;
+  color: whitesmoke;
   margin-bottom: 16px;
   border-bottom: 1px solid #ebebeb;
+  border-radius: 5px;
   padding: 5px;
 }
 
