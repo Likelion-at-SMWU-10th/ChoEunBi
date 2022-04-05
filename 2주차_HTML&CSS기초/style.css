@@ -21,7 +21,7 @@ h1 {
   font-style: italic;
 }
 
-h2 {
+.subtitle {
   background-color: #677ff0;
   font-size: 20px;
   font-weight: 600;
