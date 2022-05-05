@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+* {
+  font-family: "Jua", sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.head_container {
+  width: 100vw;
+  background-color: #e5e5e5;
+}
+
+.head {
+  width: 100vw;
+  background: url("{%static 'imgs/bg_003.jpg' %}") no-repeat center;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.head__logo {
+  font-size: 32px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.head__title {
+  display: flexbox;
+  padding-top: 150px;
+}
+
+.head__title span {
+  font-size: 48px;
+}
+
+.body_container {
+  margin: 50px 150px;
+}
+
+.contents {
+  margin-bottom: 100px;
+}
+
+.contents__subtitle {
+  font-size: 32px;
+}
+
+.contents__paragraph {
+  font-size: 18px;
+}

@@ -6,61 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My idea</title>
+    <link rel="stylesheet" href="{%static 'styles/styles.css' %}" />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
-      * {
-        font-family: "Jua", sans-serif;
-        margin: 0;
-      }
-
-      a {
-        text-decoration: none;
-        color: darkslateblue;
-      }
-
-      .head_container {
-        width: 100vw;
-        background-color: #e5e5e5;
-      }
-
       .head {
-        width: 100vw;
         background: url("{%static 'imgs/bg_003.jpg' %}") no-repeat center;
-        height: 500px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-      }
-
-      .head__title {
-        display: flexbox;
-        padding-top: 150px;
-      }
-
-      .head__title span {
-        font-size: 48px;
-      }
-
-      .body_container {
-        margin: 50px 150px;
-      }
-
-      .contents {
-        margin-bottom: 100px;
-      }
-
-      .contents__subtitle {
-        font-size: 32px;
-      }
-
-      .contents__paragraph {
-        font-size: 18px;
       }
     </style>
   </head>
   <body>
     <div class="head_container">
+      <div class="head__logo"><a href="/"> 🏡Home</a></div>
       <div class="head">
         <div class="head__title">
           <span>✨해커톤을 위한 자그마한 아이디어✨</span>
@@ -75,8 +30,12 @@
           <br />
           꿈은 크게 가지자🔥라는 목표로 생각나는 대로 주절주절 써봤습니다.
           <br />
-          공익을 위해, 혹시 저처럼 이미지를 넣으려고 하는데 아무것도 뜨지 않는
-          상황이 계속되셨다면,
+          아이디어 생각하기가 굉장히 힘드네요..?! 10일까지 더 열심히 짜내야 할
+          것 같아요!!
+          <br />
+          <br />
+          혼자 내용 정리를 위해, 로컬 이미지를 읽어오지 못할 때 설정 방법을
+          적어보았습니다!
           <br />
           <ol>
             <li>앱(ex. myapp) 폴더 안에 static 폴더 만들고 이미지 파일 넣기</li>
@@ -112,8 +71,11 @@
         </div>
       </div>
       <div class="contents">
-        <div class="contents__subtitle">1. 생각의 흐름</div>
+        <div class="contents__subtitle">1. 주제선정 동기</div>
         <div class="contents__paragraph">
+          👍 한 줄 요약: 다 함께 놀러가서 사진을 저장하고 분류하기 힘든 사람을
+          도와줄 웹서비스가 필요해!
+          <br /><br />
           여기 친구들 여럿과 국내 여행을 다녀온 사람이 있습니다. 제 스마트폰은
           스마트폰이지만 카메라 성능만은 스마트하지 못하기 때문에 주로 다른
           친구들의 카메라를 빌려 사진을 찍곤 합니다. 그렇게 한바탕 여행을 즐기고
@@ -121,7 +83,7 @@
           연사의 달인인 친구들이 있어서 양이 어마어마합니다. 거기서 우리는 지친
           몸을 이끌고 짐도 풀기 전 수많은 사진 중
           <i>잘 나온 사진</i>과 <i>내 얼굴이 들어간 사진</i>을 찾아 헤매는
-          시간을 보내게 됩니다.
+          시간을 보내게 됩니다. <br />
           <br />
           하지만 어느날 너무 귀찮았던 저는 꽤 오랜시간 사진을 저장하는 것을
           잊었고, 기간 만료라는 문구에 눈물을 글썽일 수 밖에 없었습니다. 그래서!
@@ -132,7 +94,7 @@
           부산의 어디길래 꽃이 피어있는지를 알 수가 없어요. 그렇다고 양심 없게
           "그래, 사진을 니가 찍었으면 사진에 대한 이름도 니가 딱 알 수 있게
           파일명을 잘~ 저장해야하지 않겠니"라고 친구의 면전에 이야기할 수는
-          없으니까요. 아이폰을 가진 친구가 항상 사진을 찍고 친구들의 얼굴을 다
+          없는데다가, 아이폰을 가진 친구가 항상 사진을 찍고 친구들의 얼굴을 다
           분류해서 보내주는 것도 마음이 쓰이니까요!
           <br /><br />
           👍 지금이 바로 드라이브의 단순 폴더 구조보다는 훨씬 보기 좋게 <br />
@@ -142,7 +104,32 @@
         </div>
       </div>
       <div class="contents">
-        <div class="contents__subtitle">2. 이런 기능이 있으면 좋겠어요!</div>
+        <div class="contents__subtitle">2. 기대효과</div>
+        <div class="contents__paragraph">
+          👍 친구들과 사진을 편하게 공유할 수 있는 플랫폼을 제공
+          <br />
+          👍 사진을 찍은 날짜 및 장소 등 정보 저장에 대한 편의성 제공
+          <br />
+          👍 사진 속 특정 인물 존재의 여부, 날짜 및 장소 등 사진 정보에 따라
+          많은 사진들을 편하게 분류하고 선택하는 기능 제공
+        </div>
+      </div>
+      <div class="contents">
+        <div class="contents__subtitle">3. 핵심 타겟층</div>
+        <div class="contents__paragraph">
+          👍 친구들과의 모임과 여행을 좋아하는 20~30대
+        </div>
+      </div>
+      <div class="contents">
+        <div class="contents__subtitle">4. 핵심 기능</div>
+        <div class="contents__paragraph">
+          👍 일정, 장소, 인물 등 다양한 태그를 통한 빠른 사진 분류 기능
+          <br />
+          👍 모임으로 설정되어 있는 친구들과의 빠른 사진 공유 기능
+        </div>
+      </div>
+      <div class="contents">
+        <div class="contents__subtitle">5. 다른 페이지 추가해보기</div>
         <div class="contents__paragraph">
           야심차게 첫 발을 디딘 Django를 더 사용해보고자 링크를 걸어봤습니다😎
           <ul>

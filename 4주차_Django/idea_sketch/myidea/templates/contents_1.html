@@ -1,1 +1,50 @@
-<h1>Contents1</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overview1</title>
+    <link rel="stylesheet" href="{%static 'styles/styles.css' %}" />
+    <style>
+      .head {
+        background: url("{%static 'imgs/bg_003.jpg' %}") no-repeat center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head_container">
+      <div class="head__logo"><a href="/"> 🏡Home</a></div>
+      <div class="head">
+        <div class="head__title">
+          <span>✨훌륭한 외관!✨</span>
+        </div>
+      </div>
+    </div>
+    <div class="body_container">
+      <div class="contents">
+        <div class="contents__subtitle">1. 훌륭한 외관인 척 노력함!</div>
+        <div class="contents__paragraph">
+          어떻게든 뭔가 노력해보려고 했는데.. 도저히 그려내지 못했습니다..😫
+          <br />
+          Django를 사용해 과제를 해 본 것에 만족하는 걸로 하고 있어요
+          <div class="contents__images">
+            <div>
+              <img src="{%static 'imgs/P1.png' %}" alt="P1" width="100%" />
+            </div>
+            <div>
+              <img src="{%static 'imgs/P2.png' %}" alt="P2" width="100%" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contents">
+        <div class="contents__subtitle">2. 바탕 pdf 출처</div>
+        <div class="contents__paragraph">
+          <a href="https://happyfridaymorning.co.kr/326">🤞</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
