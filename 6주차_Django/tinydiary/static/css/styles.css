@@ -1,3 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda+One&family=Merienda:wght@400;700&display=swap");
+
+:root {
+  --regular-font: "Merienda", cursive;
+  --bold-font: "Merienda One", cursive;
+  --regular-weight: 400;
+  --bold-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
+  padding: 0;
+  margin: 100px;
   text-align: center;
+  font-family: var(--regular-font);
+  font-weight: var(--regular-weight);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.head {
+  margin-bottom: 250px;
+}
+
+.head__title {
+  font-weight: var(--bold-weight);
+  font-size: 64px;
+}
+
+.head__title span {
+  font-family: var(--bold-font);
+}
+
+.content__img {
+  transition: all 0.5s ease-in-out;
+}
+
+.content a:hover > .content__img {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.content__text {
+  margin-top: 50px;
+  font-size: 48px;
+  transition: all 0.5s ease-in-out;
+}
+
+.content a:hover > .content__text {
+  transform: scaleX(1.05);
+  opacity: 0.8;
+  color: black;
+}
+
+.content__about {
+  margin-top: 100px;
+}
+
+.content__about_text {
+  font-size: 48px;
+  font-style: italic;
+  transition: all 0.5s ease-in-out;
+}
+
+.content__about_text:hover {
+  transform: scaleX(1.05);
+  opacity: 0.8;
+  color: black;
 }
