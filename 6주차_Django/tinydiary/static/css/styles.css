@@ -105,13 +105,21 @@ a {
   text-align: left;
 }
 
-.content__home img {
-  transition: all 10s ease-in-out;
-  margin-bottom: 100px;
+.content__index img {
+  transition: all 5s ease-in-out;
 }
 
-.content__home img:hover {
+.content__index span {
+  transition: all 0.5s ease-in-out;
+}
+
+.content__index a:hover > img {
   transform: rotateZ(360deg);
+  opacity: 0.8;
+}
+
+.content__index a:hover > span {
+  color: black;
   opacity: 0.8;
 }
 
@@ -122,4 +130,47 @@ a {
 
 .lasted {
   color: #999999;
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  table-layout: fixed;
+}
+
+td {
+  vertical-align: top;
+  text-align: left;
+}
+
+th {
+  vertical-align: auto;
+  text-align: center;
+}
+
+td span {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.footer {
+  margin-top: 30px;
+}
+
+.content__home {
+  margin-bottom: 70px;
+}
+
+.content__home img {
+  transition: all 0.3s ease-in-out;
+}
+
+.content__home img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
 }
