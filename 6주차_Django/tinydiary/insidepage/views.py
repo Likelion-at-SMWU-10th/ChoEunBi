@@ -6,3 +6,6 @@ def index(request):
 
 def january(request):
     return render(request, 'january.html')
+
+def march(request):
+    return render(request, 'march.html')
