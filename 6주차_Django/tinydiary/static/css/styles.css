@@ -73,3 +73,33 @@ a {
   opacity: 0.8;
   color: black;
 }
+
+.content__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.content__container img {
+  margin-right: 50px;
+  transition: all 0.5s ease-in-out;
+}
+
+.content__container img:hover {
+  transform: scale(1.05) rotateZ(5deg);
+  opacity: 0.8;
+  color: black;
+}
+
+.content__container .content__text {
+  font-size: 32px;
+}
+
+.content__container a {
+  font-family: var(--bold-font);
+}
+
+.content__text div {
+  text-align: left;
+}
