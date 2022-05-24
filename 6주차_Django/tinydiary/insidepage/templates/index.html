@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+    <title>0️⃣ Index</title>
+  </head>
+  <body>
+    <div class="head">
+      <span class="head__title"
+        ><span>Choose</span> which day <br /><span>you want to go back</span> to
+        ...
+      </span>
+    </div>
+    <div class="content">
+      <div class="content__home">
+        <a href="{% url 'home' %}">
+          <img src="{% static 'img/book.svg' %}" alt="pagan" width="250px" />
+        </a>
+      </div>
+      <div class="content__container">
+        <div class="content__year">2022</div>
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button
+            onclick="location.href='january/'"
+            type="button"
+            class="btn btn-outline-dark"
+          >
+            January.
+          </button>
+          <button type="button" class="btn btn-outline-dark">Feburary.</button>
+          <button
+            onclick="location.href='march/'"
+            type="button"
+            class="btn btn-outline-dark"
+          >
+            March.
+          </button>
+          <button type="button" class="btn btn-outline-dark">April.</button>
+          <button type="button" class="btn btn-outline-dark">May.</button>
+          <button type="button" class="btn btn-outline-dark">June.</button>
+          <button type="button" class="btn btn-outline-dark">July.</button>
+          <button type="button" class="btn btn-outline-dark">August.</button>
+          <button type="button" class="btn btn-outline-dark">September.</button>
+          <button type="button" class="btn btn-outline-dark">October.</button>
+          <button type="button" class="btn btn-outline-dark">November.</button>
+          <button type="button" class="btn btn-outline-dark">December.</button>
+        </div>
+      </div>
+      <div class="content__container">
+        <div class="content__year lasted">2021</div>
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn btn-outline-secondary">
+            January.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            Feburary.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            March.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            April.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">May.</button>
+          <button type="button" class="btn btn-outline-secondary">June.</button>
+          <button type="button" class="btn btn-outline-secondary">July.</button>
+          <button type="button" class="btn btn-outline-secondary">
+            August.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            September.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            October.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            November.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            December.
+          </button>
+        </div>
+      </div>
+      <div class="content__container">
+        <div class="content__year lasted">2020</div>
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn btn-outline-secondary">
+            January.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            Feburary.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            March.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            April.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">May.</button>
+          <button type="button" class="btn btn-outline-secondary">June.</button>
+          <button type="button" class="btn btn-outline-secondary">July.</button>
+          <button type="button" class="btn btn-outline-secondary">
+            August.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            September.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            October.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            November.
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            December.
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+    <title>💡 About</title>
+  </head>
+  <body>
+    <body>
+      <div class="head">
+        <span class="head__title">About me</span>
+      </div>
+      <div class="content">
+        <div class="content__container">
+          <a href="{% url 'home' %}">
+            <img src="{% static 'img/bird.svg' %}" alt="bird" width="250px" />
+          </a>
+          <div class="content__text">
+            <div>Hi, I'm eunbi, and I love birds ...</div>
+            <div>
+              You can check my github out
+              <a href="https://github.com/tigowler"> here </a>
+            </div>
+            <br />
+            <div>
+              Additionally If you looking for the way to go out,<br />
+              check the lovely bird out ...
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  </body>
+</html>

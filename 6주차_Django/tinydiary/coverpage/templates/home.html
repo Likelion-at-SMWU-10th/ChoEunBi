@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+    <title>🏡Home</title>
+  </head>
+  <body>
+    <div class="head">
+      <span class="head__title"
+        >This is <span>Main page</span> of <span>TinyDiary</span></span
+      >
+    </div>
+    <div class="content">
+      <a href="{% url 'index' %}">
+        <img
+          class="content__img"
+          src="{% static 'img/castle.svg' %}"
+          alt="castle"
+          width="500px"
+        />
+        <div class="content__text">Go inside ...</div>
+      </a>
+      <div class="content__about">
+        <a href="{% url 'about' %}"
+          ><div class="content__about_text">You wonder Who am I?</div></a
+        >
+      </div>
+    </div>
+  </body>
+</html>

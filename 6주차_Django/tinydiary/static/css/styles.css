@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda+One&family=Merienda:wght@400;700&display=swap");
+
+:root {
+  --regular-font: "Merienda", cursive;
+  --bold-font: "Merienda One", cursive;
+  --regular-weight: 400;
+  --bold-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 100px;
+  text-align: center;
+  font-family: var(--regular-font);
+  font-weight: var(--regular-weight);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.head {
+  margin-bottom: 100px;
+}
+
+.head__title {
+  font-weight: var(--bold-weight);
+  font-size: 32px;
+}
+
+.head__title span {
+  font-family: var(--bold-font);
+}
+
+.content__img {
+  transition: all 0.5s ease-in-out;
+}
+
+.content a:hover > .content__img {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.content__text {
+  margin-top: 25px;
+  font-size: 18px;
+  transition: all 0.5s ease-in-out;
+}
+
+.content a:hover > .content__text {
+  transform: scaleX(1.05);
+  opacity: 0.8;
+  color: black;
+}
+
+.content__about {
+  margin-top: 50px;
+}
+
+.content__about_text {
+  font-size: 18px;
+  font-style: italic;
+  transition: all 0.5s ease-in-out;
+}
+
+.content__about_text:hover {
+  transform: scaleX(1.05);
+  opacity: 0.8;
+  color: black;
+}
+
+.content__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.content__container img {
+  margin-right: 50px;
+  transition: all 0.5s ease-in-out;
+}
+
+.content__container img:hover {
+  transform: scale(1.05) rotateZ(5deg);
+  opacity: 0.8;
+  color: black;
+}
+
+.content__container .content__text {
+  font-size: 18px;
+}
+
+.content__container a {
+  font-family: var(--bold-font);
+}
+
+.content__text div {
+  text-align: left;
+}
+
+.content__index img {
+  transition: all 5s ease-in-out;
+}
+
+.content__index span {
+  transition: all 0.5s ease-in-out;
+}
+
+.content__index a:hover > img {
+  transform: rotateZ(360deg);
+  opacity: 0.8;
+}
+
+.content__index a:hover > span {
+  color: black;
+  opacity: 0.8;
+}
+
+.content__year {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.lasted {
+  color: #999999;
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  table-layout: fixed;
+}
+
+td {
+  vertical-align: top;
+  text-align: left;
+}
+
+th {
+  vertical-align: auto;
+  text-align: center;
+}
+
+td span {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.footer {
+  margin-top: 30px;
+}
+
+.content__home {
+  margin-bottom: 70px;
+}
+
+.content__home img {
+  transition: all 0.3s ease-in-out;
+}
+
+.content__home img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
