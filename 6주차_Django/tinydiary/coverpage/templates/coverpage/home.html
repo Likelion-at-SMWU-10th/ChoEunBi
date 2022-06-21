@@ -36,6 +36,15 @@
           ><div class="content__about_text">You wonder Who am I?</div></a
         >
       </div>
+      <div class="content__about">
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">Welcome, {{ user.username }}</a>
+        {% else %}
+        <a href="{% url 'signup' %}"
+          ><div class="content__about_text">You wanna join?</div></a
+        >
+        {% endif %}
+      </div>
     </div>
   </body>
 </html>

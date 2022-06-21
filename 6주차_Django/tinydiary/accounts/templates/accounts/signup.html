@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+    <title>Sign up</title>
+  </head>
+  <body>
+    <body>
+      <div class="head">
+        <span class="head__title">Sign up</span>
+      </div>
+      {% if error %} {{ error }}
+      <br />
+      <br />
+      {% endif %}
+      <div class="content">
+        <div class="content__container">
+          <a href="{% url 'home' %}">
+            <img src="{% static 'img/sun.svg' %}" alt="bird" width="300px" />
+          </a>
+          <form action="{% url 'signup' %}" method="POST">
+            <div class="content__form">
+              {% csrf_token %} Id:
+              <input class="input__text" type="text" name="userId" /> <br />
+              <br />
+              password:
+              <input class="input__text" type="password" name="password1" />
+              <br />
+              <br />
+              password confirm:
+              <input class="input__text" type="password" name="password2" />
+              <br />
+              <br />
+            </div>
+            <input class="input__submit" type="submit" value="Sign up" />
+          </form>
+        </div>
+      </div>
+    </body>
+  </body>
+</html>
