@@ -4,5 +4,6 @@ from insidepage import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('january/', views.january, name='january'),
-    path('march/', views.march, name='march')
+    path('march/', views.march, name='march'),
+    path('month/<str:month>', views.month, name='month')
 ]
