@@ -182,6 +182,11 @@ td span {
   margin-bottom: 100px;
 }
 
+.detail_date {
+  margin-right: 200px;
+  text-align: end;
+}
+
 .content__form {
   text-align: left;
 }

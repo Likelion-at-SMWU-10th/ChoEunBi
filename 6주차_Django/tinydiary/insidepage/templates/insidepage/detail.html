@@ -31,7 +31,7 @@
     <div class="content">
       <h3>{{ diary.title }}</h3>
       <br />
-      <div style="text-align: end">{{ diary.pub_date|date:'Y-m-d H:i' }}</div>
+      <div class="detail_date">{{ diary.pub_date|date:'Y-m-d H:i' }}</div>
       <div class="detail_content">{{ diary.body }}</div>
       <div class="content__index footer">
         <a href="{% url 'month' diary.pub_date.month %}">
