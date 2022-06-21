@@ -38,25 +38,27 @@
     <div class="accordion" id="accordionExample">
       {% for diary in diaries.all %}
       <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
+        <h2 class="accordion-header" id="headingOne{{diary.id}}">
           <button
             class="accordion-button collapsed"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapseOne"
+            data-bs-target="#collapseOne{{diary.id}}"
             aria-expanded="false"
-            aria-controls="collapseOne"
+            aria-controls="collapseOne{{diary.id}}"
           >
-            {{ diary.title }}
+            {{ diary.pub_date|date:'Y-m-d' }} // {{ diary.title }}
           </button>
         </h2>
         <div
-          id="collapseOne"
+          id="collapseOne{{diary.id}}"
           class="accordion-collapse collapse"
-          aria-labelledby="headingOne"
+          aria-labelledby="headingOne{{diary.id}}"
           data-bs-parent="#accordionExample"
         >
-          <div class="accordion-body">{{ diary.body }}</div>
+          <div class="accordion-body" style="text-align: left">
+            {{ diary.summary }} <a href="#">...see more</a>
+          </div>
         </div>
       </div>
       {% endfor%}
