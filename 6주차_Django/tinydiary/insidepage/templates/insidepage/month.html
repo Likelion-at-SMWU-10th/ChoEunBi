@@ -30,7 +30,7 @@
   <body>
     <div class="head">
       <span class="head__title"
-        >This is <span>January</span> , <span>2022</span></span
+        >This is <span>{{ month }}</span> , <span>2022</span></span
       >
     </div>
 
@@ -57,7 +57,8 @@
           data-bs-parent="#accordionExample"
         >
           <div class="accordion-body" style="text-align: left">
-            {{ diary.summary }} <a href="#">...see more</a>
+            {{ diary.summary }}
+            <a href="{% url 'detail' diary.id %}">...see more</a>
           </div>
         </div>
       </div>
@@ -66,5 +67,12 @@
     {% else %}
     <div>No memories</div>
     {% endif %}
+
+    <div class="content__index footer">
+      <a href="{% url 'index' %}">
+        <img src="{% static 'img/pagan.svg' %}" alt="pagan" width="50px" />
+        <span>Travel another month ...</span>
+      </a>
+    </div>
   </body>
 </html>

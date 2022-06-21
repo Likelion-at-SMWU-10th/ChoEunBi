@@ -174,3 +174,10 @@ td span {
   transform: scale(1.1);
   opacity: 0.8;
 }
+
+.detail_content {
+  margin-top: 50px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 100px;
+}
