@@ -1,0 +1,11 @@
+{% extends 'blogapp/base.html' %} {% block content %} {% load static %}
+<!-- load static 은 파일 안에 한 번만 적어도 됨, block 단위 X -->
+
+<title>Eunbi's blog:D</title>
+
+<h1>This is Eunbi's blog👍</h1>
+<a href="{% url 'blog' %}">to blog page</a>
+<br />
+<img src="{% static 'img/lock.PNG' %}" alt="toothless" />
+
+{% endblock %}

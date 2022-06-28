@@ -1,0 +1,18 @@
+{% extends 'blogapp/base.html' %} {% block content %}
+<title>Sign in</title>
+
+<h1>Sign in!</h1>
+<br />
+
+{% if error %} {{ error }}
+<br /><br />
+{% endif %}
+
+<form action="{% url 'signin' %}" method="post">
+  {% csrf_token %}
+  <!-- inputs -->
+  아이디: <input type="text" name="userId" /><br /><br />
+  비밀번호: <input type="password" name="password" /><br /><br />
+  <input type="submit" value="로그인" />
+</form>
+{% endblock %}

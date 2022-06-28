@@ -1,0 +1,9 @@
+{% extends 'blogapp/base.html' %} {% block content %}
+<title>Blog</title>
+
+<h1>Blog</h1>
+
+<h3>제목: {{blog.title}}</h3>
+<p>날짜: {{blog.pub_date}}</p>
+<p>자세한 본문: {{blog.body}}</p>
+{% endblock %}
