@@ -82,14 +82,12 @@ a {
   margin-bottom: 20px;
 }
 
-.content__container img,
-.form__container img {
+.content__container img {
   margin-right: 50px;
   transition: all 0.5s ease-in-out;
 }
 
-.content__container img:hover,
-.form__container img:hover {
+.content__container img:hover {
   transform: scale(1.05) rotateZ(5deg);
   opacity: 0.8;
   color: black;
@@ -225,4 +223,15 @@ td span {
 .form__container img {
   margin-right: 50px;
   cursor: pointer;
+}
+
+.create__form {
+  text-align: center;
+  margin-right: 50px;
+}
+
+.form_content__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
