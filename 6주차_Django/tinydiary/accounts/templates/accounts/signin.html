@@ -25,12 +25,9 @@
       <br />
       {% endif %}
       <div class="content">
-        <div class="content__container">
-          <a href="{% url 'home' %}">
-            <img src="{% static 'img/sun.svg' %}" alt="bird" width="300px" />
-          </a>
+        <div class="signin__container">
           <form action="{% url 'signin' %}" method="POST">
-            <div class="content__form">
+            <div class="signin__form">
               {% csrf_token %} Id:
               <input class="input__text" type="text" name="userId" /> <br />
               <br />
@@ -41,6 +38,14 @@
             </div>
             <input class="input__submit" type="submit" value="Sign in" />
           </form>
+          <a href="{% url 'home' %}">
+            <img
+              src="{% static 'img/moon.svg' %}"
+              alt="moon"
+              width="300px"
+              height="300px"
+            />
+          </a>
         </div>
       </div>
     </body>
