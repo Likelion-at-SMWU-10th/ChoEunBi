@@ -35,10 +35,11 @@
         <a href="{% url 'home' %}">
           <img
             class="content__img"
-            src="{% static 'img/moon.svg' %}"
-            alt="unicorn"
+            src="{% static 'img/woman.svg' %}"
+            alt="woman"
             width="300px"
             height="300px"
+            style="transform: scale(-1, 1)"
           />
         </a>
         <form action="{% url 'create' %}" method="post">

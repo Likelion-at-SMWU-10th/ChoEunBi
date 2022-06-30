@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from .models import Diary
 from .forms import DiaryForm
 from django.utils import timezone
+from django.urls import reverse
 
 # Create your views here.
 def index(request):
@@ -25,13 +26,14 @@ def detail(request, diary_id):
 def create(request):
     if request.method == 'POST':
         form = DiaryForm(request.POST)
+        now = timezone.now()
         if form.is_valid():
             post = Diary()
             post.title = form.cleaned_data['title']
             post.body = form.cleaned_data['body']
-            post.date = timezone.now()
+            post.date = now
             post.save()
-            return redirect('home')
+            return redirect('index')
 
     if request.method == 'GET':
         form = DiaryForm()
