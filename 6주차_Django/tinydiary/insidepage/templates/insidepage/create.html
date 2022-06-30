@@ -46,7 +46,7 @@
           {% csrf_token %}
 
           <div class="form_content__container">
-            <div class="create__form">{% csrf_token %} {{ form.as_p }}</div>
+            <div class="create__form">{% csrf_token %} {{ form }}</div>
             <input
               type="image"
               src="{% static 'img/woman.svg' %}"
