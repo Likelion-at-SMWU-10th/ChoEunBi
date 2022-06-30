@@ -20,6 +20,20 @@ def signup(request):
     else:
         return render(request, 'accounts/signup.html')
 
+def signin(request):
+    if request.method == 'POST':
+        Id = request.POST['userId']
+        pwd = request.POST['password']
+        user = auth.authenticate(request, username = Id, password = pwd)
+
+        if user is not None:
+            auth.login(request, user)
+            return redirect('home')
+        else:
+            return render(request, 'accounts/signin.html', {'error': 'Invalid ID or Password'})
+    else:
+        return render(request, 'accounts/signin.html')
+
 def logout(request):
     auth.logout(request)
     return redirect('home')
