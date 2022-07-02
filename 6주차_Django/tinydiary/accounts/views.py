@@ -13,7 +13,6 @@ def signup(request):
                     username = request.POST['userId'],
                     password = request.POST['password1']
                 )
-                auth.login(request, user)
                 return redirect('home')
         else:
             return render(request, 'accounts/signup.html', {'error': 'Password Confirmation error'})
