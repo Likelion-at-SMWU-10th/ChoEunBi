@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+    <title>Sign in</title>
+  </head>
+  <body>
+    <body>
+      <div class="head">
+        <span class="head__title">Sign in</span>
+      </div>
+      {% if error %} {{ error }}
+      <br />
+      <br />
+      {% endif %}
+      <div class="content">
+        <div class="signin__container">
+          <form action="{% url 'signin' %}" method="POST">
+            <div class="signin__form">
+              {% csrf_token %} Id:
+              <input class="input__text" type="text" name="userId" /> <br />
+              <br />
+              password:
+              <input class="input__text" type="password" name="password" />
+              <br />
+              <br />
+            </div>
+            <input class="input__submit" type="submit" value="Sign in" />
+          </form>
+          <a href="{% url 'home' %}">
+            <img
+              src="{% static 'img/moon.svg' %}"
+              alt="moon"
+              width="300px"
+              height="300px"
+            />
+          </a>
+        </div>
+      </div>
+    </body>
+  </body>
+</html>

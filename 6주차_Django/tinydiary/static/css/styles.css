@@ -213,3 +213,106 @@ td span {
   transform: scale(1.1);
   opacity: 0.8;
 }
+
+.form__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.form__container img {
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.create__form {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  text-align: center;
+  margin-right: 50px;
+}
+
+.form_content__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.signin__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.signin__form .input__text,
+.signin__form .input__submit {
+  margin-right: 10px;
+  width: 300px;
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  font-family: var(--regular-font);
+}
+
+.signin__form .input__submit {
+  text-align: end;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.signin__form .input__submit:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.signin__container img {
+  margin-right: 50px;
+  transition: all 0.5s ease-in-out;
+}
+
+.signin__container img:hover {
+  transform: scale(1.05) rotateZ(5deg);
+  opacity: 0.8;
+  color: black;
+}
+
+.save_text {
+  font-size: 24px;
+  font-style: italic;
+  transition: all 0.5s ease-in-out;
+}
+
+.save_text:hover {
+  transform: scaleX(1.05);
+  opacity: 0.8;
+  color: black;
+}
+
+.create__input {
+  margin-left: 10px;
+  width: 300px;
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  font-family: var(--regular-font);
+  resize: none;
+  margin-bottom: 20px;
+}
+
+.create__textarea {
+  margin-left: 10px;
+  width: 300px;
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  font-family: var(--regular-font);
+  resize: vertical;
+}

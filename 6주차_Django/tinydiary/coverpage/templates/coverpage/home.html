@@ -38,10 +38,17 @@
       </div>
       <div class="content__about">
         {% if user.is_authenticated %}
-        <a href="{% url 'logout' %}">Welcome, {{ user.username }}</a>
+        <div>Welcome, {{ user.username }}</div>
+        <br />
+        <a href="{% url 'logout' %}"
+          ><div class="content__about_text">Logout</div></a
+        >
         {% else %}
         <a href="{% url 'signup' %}"
           ><div class="content__about_text">You wanna join?</div></a
+        >
+        <a href="{% url 'signin' %}"
+          ><div class="content__about_text">You wanna login?</div></a
         >
         {% endif %}
       </div>
