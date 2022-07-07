@@ -32,3 +32,17 @@ def create(request):
     if request.method == 'GET':
         form = DiaryModelForm()
     return render(request, 'insidepage/create.html', {'form': form})
+
+def edit(request):
+    return render(request, 'insidepage/edit.html')
+
+def update(request, diary_id):
+    diary = get_object_or_404(Diary, pk=diary_id)
+    if request.method == 'POST':
+        form = DiaryModelForm(request.POST, instance=diary)
+        if form.is_valid():
+            form.save()
+            return redirect('detail', diary_id=diary.pk)
+    else:
+        form = DiaryModelForm(instance=diary)
+        return render(request, 'insidepage/edit.html', {'form':form})

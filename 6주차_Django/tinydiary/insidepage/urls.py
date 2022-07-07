@@ -8,4 +8,6 @@ urlpatterns = [
     path('month/<str:month>', views.month, name='month'),
     path('detail/<int:diary_id>', views.detail, name='detail'),
     path('create/', views.create, name='create'),
+    path('edit/', views.edit, name='edit'),
+    path('update/<int:diary_id>', views.update, name='update'),
 ]

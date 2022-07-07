@@ -9,7 +9,8 @@ class DiaryModelForm(forms.ModelForm):
             widget=forms.TextInput(attrs={
             'class': 'create__input'
         }))
-        body = forms.CharField(widget=forms.Textarea(attrs={
+        body = forms.CharField(
+            widget=forms.Textarea(attrs={
             'class': 'create__textarea'
         }))
 
