@@ -43,6 +43,11 @@
           <img src="{% static 'img/pagan.svg' %}" alt="pagan" width="50px" />
           <span>Edit your memories ...</span>
         </a>
+        <br />
+        <a href="{% url 'delete' diary.id %}">
+          <img src="{% static 'img/pagan.svg' %}" alt="pagan" width="50px" />
+          <span>Delete your memories ...</span>
+        </a>
       </div>
     </div>
   </body>

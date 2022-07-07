@@ -33,9 +33,6 @@ def create(request):
         form = DiaryModelForm()
     return render(request, 'insidepage/create.html', {'form': form})
 
-def edit(request):
-    return render(request, 'insidepage/edit.html')
-
 def update(request, diary_id):
     diary = get_object_or_404(Diary, pk=diary_id)
     if request.method == 'POST':
@@ -45,4 +42,10 @@ def update(request, diary_id):
             return redirect('detail', diary_id=diary.pk)
     else:
         form = DiaryModelForm(instance=diary)
-        return render(request, 'insidepage/edit.html', {'form':form})
+        return render(request, 'insidepage/edit.html', {'form':form, 'diary_id':diary_id})
+
+def delete(request, diary_id):
+    post = get_object_or_404(Diary, pk=diary_id)
+    month = post.pub_date.month
+    post.delete()
+    return redirect('month', month=month)

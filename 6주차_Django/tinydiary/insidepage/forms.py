@@ -5,12 +5,17 @@ class DiaryModelForm(forms.ModelForm):
     class Meta:
         model = Diary
         fields = ['title', 'body']
-        title = forms.CharField(
-            widget=forms.TextInput(attrs={
-            'class': 'create__input'
-        }))
-        body = forms.CharField(
-            widget=forms.Textarea(attrs={
-            'class': 'create__textarea'
-        }))
+        widgets = {
+            'title': forms.TextInput(
+                attrs={
+                    'class': 'create__input'
+                }
+            ),
+            'body': forms.Textarea(
+                attrs={
+                    'class': 'create__textarea',
+                }
+            )
+        }
+
 
