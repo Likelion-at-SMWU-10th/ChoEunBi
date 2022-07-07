@@ -26,8 +26,8 @@ def create(request):
     if request.method == 'POST':
         form = DiaryModelForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('index')
+            diary = form.save()
+            return redirect('detail', diary_id=diary.pk)
 
     if request.method == 'GET':
         form = DiaryModelForm()
