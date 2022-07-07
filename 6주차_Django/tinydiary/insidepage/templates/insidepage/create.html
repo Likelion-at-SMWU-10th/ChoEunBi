@@ -44,9 +44,8 @@
         </a>
         <form action="{% url 'create' %}" method="post">
           {% csrf_token %}
-
           <div class="form_content__container">
-            <div class="create__form">{% csrf_token %} {{ form }}</div>
+            <div class="create__form">{{ form }}</div>
             <input
               type="image"
               src="{% static 'img/woman.svg' %}"
