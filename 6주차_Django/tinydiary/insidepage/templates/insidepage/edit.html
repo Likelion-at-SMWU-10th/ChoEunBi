@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create</title>
+    <title>Edit</title>
 
     <!-- Bootstrap -->
     <link
@@ -28,27 +28,27 @@
   </head>
   <body>
     <div class="head">
-      <span class="head__title">Write your stories ...</span>
+      <span class="head__title">Edit your memories..</span>
     </div>
     <div class="form_content">
       <div class="form__container">
-        <a href="{% url 'index' %}">
+        <a href="{% url 'detail' diary_id %}">
           <img
             class="content__img"
-            src="{% static 'img/woman.svg' %}"
+            src="{% static 'img/pegasus.svg' %}"
             alt="woman"
             width="300px"
             height="300px"
             style="transform: scale(-1, 1)"
           />
         </a>
-        <form action="{% url 'create' %}" method="post">
+        <form method="post">
           {% csrf_token %}
           <div class="form_content__container">
             <div class="create__form">{{ form }}</div>
             <input
               type="image"
-              src="{% static 'img/woman.svg' %}"
+              src="{% static 'img/pegasus.svg' %}"
               width="300px"
               alt="submit"
             />
