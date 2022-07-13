@@ -38,3 +38,11 @@ def create(request):
     if request.method == 'GET':
         form = DiaryForm()
         return render(request, 'insidepage/create.html', {'form': form})
+
+def search(request):
+    query = request.GET.get('query', '')
+    if query:
+        diaries = Diary.objects.filter(title__contains=query)
+        return render(request, 'insidepage/search.html', {'diaries': diaries})
+    else:
+        return render(request, 'insidepage/search.html', {'guide': 'Enter something you want to find...'})
