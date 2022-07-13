@@ -1,8 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from .models import Diary
-from .forms import DiaryForm, CommentModelForm
-from django.utils import timezone
-from .forms import DiaryModelForm
+from .forms import CommentModelForm, DiaryModelForm
 
 # Create your views here.
 def index(request):

@@ -34,6 +34,17 @@
         <br />
         <div class="detail_date">{{ diary.pub_date|date:'Y-m-d H:i' }}</div>
         <div class="detail_content">{{ diary.body }}</div>
+        <div class="content__index footer">
+          <a href="{% url 'update' diary.id %}">
+            <img src="{% static 'img/pagan.svg' %}" alt="pagan" width="50px" />
+            <span>Edit your memories ...</span>
+          </a>
+          <br />
+          <a href="{% url 'delete' diary.id %}">
+            <img src="{% static 'img/pagan.svg' %}" alt="pagan" width="50px" />
+            <span>Delete your memories ...</span>
+          </a>
+        </div>
       </div>
       <div class="detail__comment">
         <form action="{% url 'commentcreate' diary.id %}" method="POST">
