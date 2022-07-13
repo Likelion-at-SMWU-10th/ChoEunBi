@@ -347,3 +347,24 @@ td span {
   opacity: 0.6;
   color: black;
 }
+
+.head_flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.head_flex__img {
+  margin-right: 30px;
+}
+
+.head_flex__img img {
+  transition: all 0.5s ease-in-out;
+}
+
+.head_flex__img img:hover {
+  transform: scaleY(1.1) scaleX(1.05);
+  opacity: 0.8;
+}
