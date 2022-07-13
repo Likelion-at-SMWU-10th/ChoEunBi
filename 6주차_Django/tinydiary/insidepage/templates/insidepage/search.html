@@ -33,14 +33,27 @@
       <br /><br />
       <form action="{% url 'search' %}" role="search" type="GET">
         <input
+          class="create__input_month"
+          type="search"
+          placeholder="Month"
+          aria-label="Month"
+          name="month"
+        />
+        &nbsp; : &nbsp;
+        <input
           class="create__input"
           type="search"
-          placeholder="Search"
+          placeholder="Search by title or contents"
           aria-label="Search"
           name="query"
         />
         <button class="btn_search" type="submit">Search</button>
       </form>
+      {% if error %}
+      <p>{{ error }}</p>
+      {% else %}
+      <p>If you enter nothing in Month, We will search entire memories</p>
+      {% endif %}
     </div>
     <div class="accordion" id="accordionExample">
       {% for diary in diaries.all %}
