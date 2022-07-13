@@ -43,7 +43,8 @@
         <br /><br />
         {% for comment in diary.comment_set.all|dictsort:'updated_at' %}
         <div class="comment_block">
-          ⁙ {{ comment.updated_at|date:'Y-m-d H:i' }} // {{ comment.content }}
+          ⁜ {{ comment.updated_at|date:'Y-m-d H:i' }} // {{ comment.content }}
+          &nbsp; &nbsp; <a href="#">Χ</a>
           <br />
         </div>
         {% endfor %}
