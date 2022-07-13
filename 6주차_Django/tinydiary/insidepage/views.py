@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from .models import Diary
-from .forms import DiaryForm
+from .forms import DiaryForm, CommentModelForm
 from django.utils import timezone
 from django.urls import reverse
 
@@ -21,7 +21,8 @@ def month(request, month):
 
 def detail(request, diary_id):
     diary_detail = get_object_or_404(Diary, pk = diary_id)
-    return render(request, 'insidepage/detail.html', {'diary': diary_detail})
+    form = CommentModelForm()
+    return render(request, 'insidepage/detail.html', {'diary': diary_detail, 'form': form})
 
 def create(request):
     if request.method == 'POST':
@@ -77,3 +78,15 @@ def validate_month(month):
         return {'error': 'Only numbers between 1 and 12 must be entered in Month'}
     # 3. 1 ~ 12 사이의 숫자인 경우[OK]
     return
+
+def commentcreate(request, diary_id):
+    diary = get_object_or_404(Diary, pk=diary_id)
+    if request.method == 'POST':
+        form = CommentModelForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.diary = diary
+            comment.save()
+            return redirect('detail', diary_id=diary.pk)
+    
+    return redirect('detail', diary_id=diary.pk)

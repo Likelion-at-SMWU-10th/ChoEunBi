@@ -28,17 +28,32 @@
         >This is <span>March</span> , <span>2022</span></span
       >
     </div>
-    <div class="content">
-      <h3>{{ diary.title }}</h3>
-      <br />
-      <div class="detail_date">{{ diary.pub_date|date:'Y-m-d H:i' }}</div>
-      <div class="detail_content">{{ diary.body }}</div>
-      <div class="content__index footer">
-        <a href="{% url 'month' diary.pub_date.month %}">
-          <img src="{% static 'img/pagan.svg' %}" alt="pagan" width="50px" />
-          <span>Travel to other memories ...</span>
-        </a>
+    <div class="detail_container">
+      <div class="detail__diary">
+        <h3>{{ diary.title }}</h3>
+        <br />
+        <div class="detail_date">{{ diary.pub_date|date:'Y-m-d H:i' }}</div>
+        <div class="detail_content">{{ diary.body }}</div>
       </div>
+      <div class="detail__comment">
+        <form action="{% url 'commentcreate' diary.id %}" method="POST">
+          {% csrf_token %} {{ form }}
+          <button class="btn_search" type="submit">save</button>
+        </form>
+        <br /><br />
+        {% for comment in diary.comment_set.all|dictsort:'updated_at' %}
+        <div class="comment_block">
+          ⁙ {{ comment.updated_at|date:'Y-m-d H:i' }} // {{ comment.content }}
+          <br />
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="content__index footer">
+      <a href="{% url 'month' diary.pub_date.month %}">
+        <img src="{% static 'img/pagan.svg' %}" alt="pagan" width="50px" />
+        <span>Travel to other memories ...</span>
+      </a>
     </div>
   </body>
 </html>

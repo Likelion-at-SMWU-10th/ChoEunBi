@@ -8,5 +8,6 @@ urlpatterns = [
     path('month/<str:month>', views.month, name='month'),
     path('detail/<int:diary_id>', views.detail, name='detail'),
     path('create/', views.create, name='create'),
-    path('search/', views.search, name='search')
+    path('search/', views.search, name='search'),
+    path('commentcreate/<int:diary_id>', views.commentcreate, name='commentcreate')
 ]
