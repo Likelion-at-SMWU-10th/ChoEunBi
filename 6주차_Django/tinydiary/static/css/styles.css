@@ -177,8 +177,8 @@ td span {
 
 .detail_content {
   margin-top: 50px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 100px;
+  margin-right: 100px;
   margin-bottom: 100px;
 }
 
@@ -306,6 +306,18 @@ td span {
   margin-bottom: 20px;
 }
 
+.create__input_month {
+  margin-left: 10px;
+  width: 70px;
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  font-family: var(--regular-font);
+  resize: none;
+  margin-bottom: 20px;
+}
+
 .create__textarea {
   margin-left: 10px;
   width: 300px;
@@ -315,4 +327,63 @@ td span {
   background-color: transparent;
   font-family: var(--regular-font);
   resize: vertical;
+}
+
+.choices {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_search {
+  background: transparent;
+  border: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn_search:hover {
+  transform: scaleX(1.05);
+  opacity: 0.6;
+  color: black;
+}
+
+.head_flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.head_flex__img {
+  margin-right: 30px;
+}
+
+.head_flex__img img {
+  transition: all 0.5s ease-in-out;
+}
+
+.head_flex__img img:hover {
+  transform: scaleY(1.1) scaleX(1.05);
+  opacity: 0.8;
+}
+
+.detail_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail_container .detail__diary {
+  width: 1000px;
+}
+
+.detail_container .detail__comment {
+  margin-right: 70px;
+}
+
+.comment_block {
+  margin-bottom: 10px;
 }

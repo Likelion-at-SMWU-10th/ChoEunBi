@@ -25,14 +25,25 @@
   <body>
     <div class="head">
       <span class="head__title"
-        ><span>Choose</span> which day <br /><span>you want to go back</span> to
-        ...
+        ><span>Choose</span> which day <span>you want to go back</span> to ...
       </span>
       <br /><br />
-      <div class="save_text">
-        <a href="{% url 'create' %}" style="text-decoration: none; color: black"
-          >Save your memories</a
-        >
+      <div class="choices">
+        <div class="save_text">
+          <a
+            href="{% url 'create' %}"
+            style="text-decoration: none; color: black"
+            >Save your memories</a
+          >
+        </div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp; or &nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <div class="save_text">
+          <a
+            href="{% url 'search' %}"
+            style="text-decoration: none; color: black"
+            >Find your memories ...</a
+          >
+        </div>
       </div>
     </div>
     <div class="content">

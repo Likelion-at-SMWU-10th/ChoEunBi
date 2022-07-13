@@ -10,4 +10,6 @@ urlpatterns = [
     path('create/', views.create, name='create'),
     path('update/<int:diary_id>', views.update, name='update'),
     path('delete/<int:diary_id>', views.delete, name='delete'),
+    path('search/', views.search, name='search'),
+    path('commentcreate/<int:diary_id>', views.commentcreate, name='commentcreate')
 ]

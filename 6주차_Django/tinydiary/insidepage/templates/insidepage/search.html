@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+    <title>Search</title>
+  </head>
+  <body>
+    <div class="head_flex">
+      <div class="head_flex__img">
+        <a href="{% url 'index' %}">
+          <img
+            src="{% static 'img/cauldron.svg' %}"
+            alt="cauldron"
+            width="200px"
+          />
+        </a>
+      </div>
+      <div>
+        <span class="head__title"> Which memory do you want to find? </span>
+        <br /><br />
+        <form action="{% url 'search' %}" role="search" type="GET">
+          <input
+            class="create__input_month"
+            type="search"
+            placeholder="Month"
+            aria-label="Month"
+            name="month"
+          />
+          &nbsp; : &nbsp;
+          <input
+            class="create__input"
+            type="search"
+            placeholder="Search by title or contents"
+            aria-label="Search"
+            name="query"
+          />
+          <button class="btn_search" type="submit">Search</button>
+        </form>
+        {% if error %}
+        <p>{{ error }}</p>
+        {% else %}
+        <p>If you enter nothing in Month, We will search entire memories</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="accordion" id="accordionExample">
+      {% for diary in diaries.all %}
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne{{diary.id}}">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne{{diary.id}}"
+            aria-expanded="false"
+            aria-controls="collapseOne{{diary.id}}"
+          >
+            {{ diary.pub_date|date:'Y-m-d' }} // {{ diary.title }}
+          </button>
+        </h2>
+        <div
+          id="collapseOne{{diary.id}}"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingOne{{diary.id}}"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body" style="text-align: left">
+            {{ diary.summary }}
+            <a href="{% url 'detail' diary.id %}">...see more</a>
+          </div>
+        </div>
+      </div>
+      {% endfor%}
+      <!-- no result -->
+      {% if diaries.count == 0 %}
+      <p>We couldn't find your memories ...</p>
+      {% endif %}
+      <!-- initial guide or no keywords to search -->
+      {% if guide %}
+      <p>{{ guide }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
