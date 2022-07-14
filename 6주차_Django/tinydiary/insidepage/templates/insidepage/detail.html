@@ -47,14 +47,24 @@
         </div>
       </div>
       <div class="detail__comment">
+        {% if not comment %}
         <form action="{% url 'commentcreate' diary.id %}" method="POST">
           {% csrf_token %} {{ form }}
           <button class="btn_search" type="submit">save</button>
         </form>
+        {% else %}
+        <form action="{% url 'commentupdate' comment.id %}" method="POST">
+          {% csrf_token %} {{ form }}
+          <button class="btn_search" type="submit">update</button>
+        </form>
+        {% endif %}
         <br /><br />
         {% for comment in diary.comment_set.all|dictsortreversed:'updated_at' %}
         <div class="comment_block">
           ⁜ {{ comment.updated_at|date:'Y-m-d H:i' }} // {{ comment.content }}
+          <!-- 댓글 수정하기 -->
+          &nbsp;<a href="{% url 'commentupdate' comment.id %}">↺</a>
+          <!-- 댓글 삭제하기 -->
           &nbsp;<a href="{% url 'commentdelete' comment.id %}">Χ</a>
           <br />
         </div>
