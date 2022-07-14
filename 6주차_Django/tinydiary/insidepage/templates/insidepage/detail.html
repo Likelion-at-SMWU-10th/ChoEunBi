@@ -52,10 +52,10 @@
           <button class="btn_search" type="submit">save</button>
         </form>
         <br /><br />
-        {% for comment in diary.comment_set.all|dictsort:'updated_at' %}
+        {% for comment in diary.comment_set.all|dictsortreversed:'updated_at' %}
         <div class="comment_block">
           ⁜ {{ comment.updated_at|date:'Y-m-d H:i' }} // {{ comment.content }}
-          &nbsp; &nbsp; <a href="#">Χ</a>
+          &nbsp;<a href="{% url 'commentdelete' comment.id %}">Χ</a>
           <br />
         </div>
         {% endfor %}

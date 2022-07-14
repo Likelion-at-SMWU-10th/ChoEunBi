@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, redirect, render
-from .models import Diary
+from .models import Diary, Comment
 from .forms import CommentModelForm, DiaryModelForm
 
 # Create your views here.
@@ -101,3 +101,8 @@ def commentcreate(request, diary_id):
     
     return redirect('detail', diary_id=diary.pk)
 
+def commentdelete(request, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    diary = comment.diary
+    comment.delete()
+    return redirect('detail', diary_id=diary.pk)

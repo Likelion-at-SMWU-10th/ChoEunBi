@@ -11,5 +11,6 @@ urlpatterns = [
     path('update/<int:diary_id>', views.update, name='update'),
     path('delete/<int:diary_id>', views.delete, name='delete'),
     path('search/', views.search, name='search'),
-    path('commentcreate/<int:diary_id>', views.commentcreate, name='commentcreate')
+    path('commentcreate/<int:diary_id>', views.commentcreate, name='commentcreate'),
+    path('commentdelete/<int:comment_id>', views.commentdelete, name='commentdelete')
 ]
