@@ -1,8 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
-from .models import Diary
-from .forms import DiaryForm, CommentModelForm
-from django.utils import timezone
-from .forms import DiaryModelForm
+from .models import Diary, Comment
+from .forms import CommentModelForm, DiaryModelForm
 
 # Create your views here.
 def index(request):
@@ -19,10 +17,17 @@ def month(request, month):
     months = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     return render(request, 'insidepage/month.html', {'diaries': diaries, 'month': months[int(month)-1]})
 
-def detail(request, diary_id):
+def detail(request, diary_id, comment_id=None):
     diary_detail = get_object_or_404(Diary, pk = diary_id)
-    form = CommentModelForm()
-    return render(request, 'insidepage/detail.html', {'diary': diary_detail, 'form': form})
+
+    if comment_id==None:  
+        form = CommentModelForm()
+        return render(request, 'insidepage/detail.html', {'diary': diary_detail, 'form': form})
+    else:
+        comment = get_object_or_404(Comment, pk = comment_id)
+        form = CommentModelForm(instance=comment)
+        return render(request, 'insidepage/detail.html', {'diary': diary_detail, 'form': form, 'comment': comment})
+        
 
 def create(request):
     if request.method == 'POST':
@@ -103,3 +108,18 @@ def commentcreate(request, diary_id):
     
     return redirect('detail', diary_id=diary.pk)
 
+def commentdelete(request, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    comment.delete()
+    return redirect('detail', diary_id=comment.diary.pk)
+
+def commentupdate(request, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if request.method == 'POST':
+        form = CommentModelForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            return redirect('detail', diary_id=comment.diary.pk)
+    else:
+        # form = CommentModelForm(instance=comment)
+        return redirect('detail', diary_id=comment.diary.pk, comment_id=comment_id)

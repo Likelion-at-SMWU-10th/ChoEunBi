@@ -34,17 +34,38 @@
         <br />
         <div class="detail_date">{{ diary.pub_date|date:'Y-m-d H:i' }}</div>
         <div class="detail_content">{{ diary.body }}</div>
+        <div class="content__index footer">
+          <a href="{% url 'update' diary.id %}">
+            <img src="{% static 'img/pagan.svg' %}" alt="pagan" width="50px" />
+            <span>Edit your memories ...</span>
+          </a>
+          <br />
+          <a href="{% url 'delete' diary.id %}">
+            <img src="{% static 'img/pagan.svg' %}" alt="pagan" width="50px" />
+            <span>Delete your memories ...</span>
+          </a>
+        </div>
       </div>
       <div class="detail__comment">
+        {% if not comment %}
         <form action="{% url 'commentcreate' diary.id %}" method="POST">
           {% csrf_token %} {{ form }}
           <button class="btn_search" type="submit">save</button>
         </form>
+        {% else %}
+        <form action="{% url 'commentupdate' comment.id %}" method="POST">
+          {% csrf_token %} {{ form }}
+          <button class="btn_search" type="submit">update</button>
+        </form>
+        {% endif %}
         <br /><br />
-        {% for comment in diary.comment_set.all|dictsort:'updated_at' %}
+        {% for comment in diary.comment_set.all|dictsortreversed:'updated_at' %}
         <div class="comment_block">
           ⁜ {{ comment.updated_at|date:'Y-m-d H:i' }} // {{ comment.content }}
-          &nbsp; &nbsp; <a href="#">Χ</a>
+          <!-- 댓글 수정하기 -->
+          &nbsp;<a href="{% url 'commentupdate' comment.id %}">↺</a>
+          <!-- 댓글 삭제하기 -->
+          &nbsp;<a href="{% url 'commentdelete' comment.id %}">Χ</a>
           <br />
         </div>
         {% endfor %}
