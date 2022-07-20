@@ -46,14 +46,14 @@ class BlogDetail(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class CommentList(APIView):
-    # /comment/
-    # 전체 댓글 리스트 
-    def get(self, request):
-        comments = get_list_or_404(Comment)
+    # /<int:blog_id>/comment
+    # 특정 게시글에 따른 댓글 
+    def get(self, request, blog_id):
+        comments = Comment.objects.filter(blog=blog_id)
         serializer = CommentSerializer(comments, many=True)
         return Response(serializer.data)
 
-    # /comment/<int:blog_id>
+    # /<int:blog_id>/comment/
     def post(self, request, blog_id):
         blog = get_object_or_404(Blog, pk=blog_id)
         serializer = CommentSerializer(data = request.data)
@@ -61,5 +61,34 @@ class CommentList(APIView):
             serializer.save(blog=blog)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class CommentDetail(APIView):
+    def get_object(self, pk):
+        try:
+            return Comment.objects.get(pk=pk)
+        except Comment.DoesNotExist:
+            raise Http404
+
+    # /comment/<int:comment_id>
+    # 특정 댓글 가져오기
+    def get(self, request, comment_id):
+        comments = self.get_object(comment_id)
+        serializer = CommentSerializer(comments)
+        return Response(serializer.data)
+    
+    # 댓글 수정하기
+    def put(self, request, comment_id):
+        comment = self.get_object(comment_id)
+        serializer = CommentSerializer(comment, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    # 댓글 삭제하기
+    def delete(self, request, comment_id):
+        comment = self.get_object(comment_id)
+        comment.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
             
