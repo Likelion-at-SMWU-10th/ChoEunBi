@@ -44,7 +44,7 @@
     <td>캡쳐</td>
   </tr>
   <tr>
-    <td rowspan="3">일단 만드는 Django</td>
+    <td rowspan="4">일단 만드는 Django</td>
     <td>7주차</td>
     <td> 
       <img src="https://user-images.githubusercontent.com/92033114/174576147-fa7e8353-e686-4e6d-8175-bd2265a76aba.JPG" width="500">
@@ -60,6 +60,12 @@
     <td>10주차</td>
     <td> 
       <img src="https://user-images.githubusercontent.com/92033114/177779928-36bc663e-cbc7-46f5-a81f-4c6d1f65e3ac.JPG" width="500">
+    </td>
+  </tr>
+  <tr>
+    <td>12주차</td>
+    <td>
+      <img src="https://user-images.githubusercontent.com/92033114/180103016-d27dcedf-468f-4401-989c-96c8746414aa.JPG" width="500">
     </td>
   </tr>
 </table>
